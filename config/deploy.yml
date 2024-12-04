@@ -1,0 +1,31 @@
+service: aakashblog
+image: cole15sky/blog
+
+env:
+  secret:
+    - SECRET_KEY
+
+proxy:
+  ssl: true
+  host: techiesky.com
+  app_port: 8000 
+  healthcheck:
+    path: /
+    interval: 5
+
+servers:
+  web:
+    hosts:
+      - 167.172.160.52
+    options:
+      expose: "8000"
+
+registry:
+  server: ghcr.io
+  username: cole15sky
+  password: 
+    - KAMAL_REGISTRY_PASSWORD
+
+
+builder:
+  arch: amd64
