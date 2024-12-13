@@ -1,0 +1,151 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F8F9FA;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: linear-gradient(to right, #00012D, #03025f);
+            padding: 1rem;
+            color: white;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        nav .menu {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        nav .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav .menu a:hover {
+            background-color: #4B5563;
+        }
+
+        nav .login {
+            margin-left: auto;
+        }
+
+        nav .login a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav .login a:hover {
+            background-color: #4B5563;
+        }
+
+        .main-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .main-content {
+            max-width: 500px;
+            padding: 2rem;
+        }
+
+        .main-content h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .main-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .spinner-text {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 1rem;
+        }
+
+        .small-text {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 2rem;
+        }
+    </style>
+    <title>
+        {% block title %} PYTHON PROJECT {% endblock %}
+
+    </title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <!-- <img src="{% static 'myApp/logo_sky.png' %}" alt="Sky Logo"> -->
+
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/articles">Articles</a>
+                <a href="/gallery">Gallery</a>
+            </div>
+            
+        </div>
+    </nav>
+
+
+    <div>
+
+        <div class="container mx-auto px-4 py-20">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+</body>
+
+</html>
