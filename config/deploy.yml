@@ -1,5 +1,5 @@
 service: aakashblog
-image: cole15sky/blog
+image: techiesky/blog
 
 env:
   secret:
@@ -21,8 +21,7 @@ servers:
       expose: "8000"
 
 registry:
-  server: ghcr.io
-  username: cole15sky
+  username: techiesky
   password: 
     - KAMAL_REGISTRY_PASSWORD
 
